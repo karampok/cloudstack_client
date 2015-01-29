@@ -4,6 +4,17 @@ module CloudstackClient
 
 		##
     # Lists the public ip addresses.
+        #
+ def list_public_ip_addresses_clean(args = {})
+      params = {
+          'command' => 'listPublicIpAddresses',
+          'isrecursive' => true
+      }
+      params.merge(args)
+      json = send_request(params)
+      json['publicipaddress'] || []
+    end
+
 
     def list_public_ip_addresses(args = {})
       params = {
