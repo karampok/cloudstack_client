@@ -39,6 +39,7 @@ module CloudstackClient
           'privatePort' => private_port,
           'protocol' => protocol,
           'publicPort' => public_port,
+          'openfirewall' => "false",
           'virtualMachineId' => virtual_machine_id
       }
       async ? send_async_request(params)['portforwardingrule'] : send_request(params)

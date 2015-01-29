@@ -57,5 +57,4 @@ module CloudstackClient
     end
 
 	end
-
 end

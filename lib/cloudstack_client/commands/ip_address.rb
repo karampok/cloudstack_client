@@ -10,7 +10,9 @@ module CloudstackClient
           'command' => 'listPublicIpAddresses',
           'isrecursive' => true
       }
-      params.merge(args)
+      params['zoneid'] = args[:zoneid] if args[:zoneid]
+      params['associatednetworkid'] = args[:associatednetworkid] if args[:associatednetworkid]
+      p params
       json = send_request(params)
       json['publicipaddress'] || []
     end
