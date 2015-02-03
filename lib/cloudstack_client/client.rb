@@ -53,8 +53,10 @@ module CloudstackClient
       signature = CGI.escape(signature)
 
       url = "#{@api_url}?#{data}&signature=#{signature}"
+      puts url if @debug
 
       uri = URI.parse(url)
+      puts uri
       http = Net::HTTP.new(uri.host, uri.port)
       
       if uri.scheme == 'https'
