@@ -56,7 +56,6 @@ module CloudstackClient
       puts url if @debug
 
       uri = URI.parse(url)
-      puts uri
       http = Net::HTTP.new(uri.host, uri.port)
       
       if uri.scheme == 'https'
